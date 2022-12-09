@@ -14,3 +14,53 @@ html-view
         1.2.1--Event binding           (event name)="method name()"
         1.2.2--Event binding using $ event    (eventname)="methodname($event)"
         1.2.3--Event binding using templaterendering variable   #variable
+
+
+2-Two Way binding
+
+    2.1-ngmodel        [(ngmodel)]="value"
+                       FormsModule
+
+    
+
+Redirection in angular
+------------------------
+navigateByUrl   -method used to Redirection
+
+
+Router           -class
+
+ApproutingModule  -module
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Form Validation in angular
+--------------------------
+We caan create forms in two Way
+
+    1.Template Driven Form
+    2. Model Driven Form

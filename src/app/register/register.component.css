@@ -1,0 +1,38 @@
+.login{
+    width: 423px;
+    height: 506px;
+    border-radius: 70px;
+    margin-left: 1177px;
+    margin-top: 134px;
+    background-color: rgba(255, 255, 255, 0.267);
+    
+}
+.loginhd{
+    margin-left: 130px;
+
+    margin-top: 35px;
+    color: white;
+    
+}
+.content{
+    width: 498px;
+    color: white;
+    text-align: center;
+}
+#acno{
+    width: 300px;
+    height: 59px;
+    border-radius: 26px;
+}
+#psw{
+    width: 300px;
+    height: 59px;
+    border-radius: 26px;
+}
+#loginbtn{
+    margin-left: 60px;
+}
+.registerlink{
+    margin-left: 54px;
+    color: white;
+}

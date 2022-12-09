@@ -1,0 +1,38 @@
+<h1 class="text-light">Welcome {{user}}</h1>
+<a class="text-light text-center" routerLink="/transaction">View Transaction History</a>
+
+<form (ngSubmit)="deposit()"  >
+    <div class="depoform container bg- mt-5">
+        <h1 class="loginhd ml-5">deposit</h1>
+        <div class="mt-5">
+          <input type="text" class="form-control container" [(ngModel)]="acno" placeholder="acno" id="acid" name="acno" aria-describedby="emailHelp">
+        </div> 
+        <div class="mt-5">
+            <input type="password" class="form-control container" [(ngModel)]="psw" placeholder="password" id="password" name="psw" aria-describedby="emailHelp">
+          </div>    
+          <div class="mt-5">
+            <input type="text" class="form-control container" [(ngModel)]="amnt" placeholder="Amount" id="amnt" name="amount" aria-describedby="emailHelp">
+          </div> 
+          <button type="submit"  id="depobtn" class="btn btn-success mt-3">Deposit</button>
+          
+    
+    </div>
+
+
+    <form (ngSubmit)="wihtdraw()">
+        <div class="wi">
+            <h1 class="loginhd ml-5">Withdraw</h1>
+            <div class="mt-5">
+              <input type="text" class="form-control container"  [(ngModel)]="acno1" placeholder="acnumber" id="acno" name="accountnumber" aria-describedby="emailHelp">
+            </div> 
+            <div class="mt-5">
+                <input type="text" class="form-control container" [(ngModel)]="psw1" placeholder="password" id="psw" name="password" aria-describedby="emailHelp">
+              </div>    
+              <div class="mt-5">
+                <input type="text" class="form-control container"  [(ngModel)]="amnt1" placeholder="Amount" id="ammount" name="amnt" aria-describedby="emailHelp">
+              </div> 
+              <button type="submit"  id="depobtn" class="btn btn-success mt-3">Withdraw</button>
+              
+        
+        </div>
+    </form>
