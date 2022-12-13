@@ -58,9 +58,39 @@ ApproutingModule  -module
 
 
 
+
 Form Validation in angular
 --------------------------
 We caan create forms in two Way
 
     1.Template Driven Form
     2. Model Driven Form
+
+         reactiveFormsModule-module used to create model forms
+        FormsBuilder        -class of reactiveFormsModule
+                        -Group,array,controle 
+
+Validate Model Form
+--------------------
+
+Validator-is a class in angular it includes methods for apply Validation
+
+-Access errors in validators rule
+
+        this.registerForm.get('uname')?.error           --(.error is used to access data in validation)
+
+                                    -valid  - we get an empty response
+
+                                    -invalid-content
+                                    
+
+
+
+
+Local storage in angular
+--------------------------
+
+-  store- localstorage.setitem
+ - Access- localstorage.getitem
+ - Delte- localstorage.removeitem
+ 

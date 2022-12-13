@@ -1,17 +1,28 @@
-<form (ngSubmit)="register()" >
+<form (ngSubmit)="register()" [formGroup]="registerForm" >
   <div class="Register   p-2 container">
       <h1 class="registerhdd ml-5">Register</h1>
           <div class="mt-5">
               <div class="mt-3">
-                  <input type="text" class="form-control container" [(ngModel)]="uname" placeholder="Enter User Name" id="uid" name="usr">
+                  <input type="text" class="form-control container" formControlName="uname"  placeholder="Enter User Name" id="uid" name="uname">
                 </div>
-            <input type="text" class="form-control container" [(ngModel)]="acno"  placeholder="Enter Acno" id="acid" name="acno" aria-describedby="emailHelp">
+                <div *ngIf="this.registerForm.get('uname')?.errors && this.registerForm.get('uname')?.touched">
+                  <p class="text-danger">Incurrect User Name</p>
+                </div>
+           <div class="mt-3">
+             <input type="text" class="form-control container" formControlName="acno"  placeholder="Enter Acno" id="acid" name="acno" aria-describedby="emailHelp">
+           </div>
+           <div *ngIf="this.registerForm.get('acno')?.errors && this.registerForm.get('acno')?.touched">
+            <p class="text-danger">Incurrect Account Number</p>
+          </div>
           
           <div class="mt-3">
-            <input type="password" class="form-control container" [(ngModel)]="psw" placeholder="Enter Password" id="pid" name="psw">
+            <input type="password" class="form-control container" formControlName="psw" placeholder="Enter Password" id="pid" name="psw">
+          </div>
+          <div *ngIf="this.registerForm.get('psw')?.errors && this.registerForm.get('psw')?.touched">
+            <p class="text-danger">Incurrect Password</p>
           </div>
          
-          <button type="submit" (click)="register()" id="loginbtn" class="btn btn-success mt-3">Register</button>
+          <button type="submit"  id="loginbtn" class="btn btn-success mt-3">Register</button>
         
   
        

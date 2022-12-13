@@ -1,36 +1,54 @@
 <h1 class="text-light">Welcome {{user}}</h1>
 <a class="text-light text-center" routerLink="/transaction">View Transaction History</a>
 
-<form (ngSubmit)="deposit()"  >
+<form (ngSubmit)="deposit()"  [formGroup]="depositForm"  >
     <div class="depoform container bg- mt-5">
         <h1 class="loginhd ml-5">deposit</h1>
         <div class="mt-5">
-          <input type="text" class="form-control container" [(ngModel)]="acno" placeholder="acno" id="acid" name="acno" aria-describedby="emailHelp">
+          <input type="text" class="form-control container"  formControlName="acno"  placeholder="acno" id="acid" name="acno" aria-describedby="emailHelp">
         </div> 
+        <div *ngIf="this.depositForm.get('acno')?.errors && this.depositForm.get('acno')?.touched">
+          <p class="text-danger">Incurrect Account Number</p>
+        </div>
         <div class="mt-5">
-            <input type="password" class="form-control container" [(ngModel)]="psw" placeholder="password" id="password" name="psw" aria-describedby="emailHelp">
+            <input type="password" class="form-control container" formControlName="psw" placeholder="password" id="password" name="psw" aria-describedby="emailHelp">
           </div>    
+          <div *ngIf="this.depositForm.get('psw')?.errors && this.depositForm.get('psw')?.touched">
+            <p class="text-danger">Incurrect Password</p>
+          </div>
           <div class="mt-5">
-            <input type="text" class="form-control container" [(ngModel)]="amnt" placeholder="Amount" id="amnt" name="amount" aria-describedby="emailHelp">
+            <input type="text" class="form-control container"  formControlName="amnt" placeholder="Amount" id="amnt" name="amount" aria-describedby="emailHelp">
           </div> 
+          <div *ngIf="this.depositForm.get('amnt')?.errors && this.depositForm.get('amnt')?.touched">
+            <p class="text-danger">Incurrect Amount</p>
+          </div>
           <button type="submit"  id="depobtn" class="btn btn-success mt-3">Deposit</button>
           
     
     </div>
 
 
-    <form (ngSubmit)="wihtdraw()">
+    <form (ngSubmit)="wihtdraw()" [formGroup]="withdrawForm" >
         <div class="wi">
             <h1 class="loginhd ml-5">Withdraw</h1>
             <div class="mt-5">
-              <input type="text" class="form-control container"  [(ngModel)]="acno1" placeholder="acnumber" id="acno" name="accountnumber" aria-describedby="emailHelp">
+              <input type="text" class="form-control container"  formControlName="acno1" placeholder="acnumber" id="acno" name="accountnumber" aria-describedby="emailHelp">
             </div> 
+            <div *ngIf="this.withdrawForm.get('acno')?.errors && this.withdrawForm.get('acno')?.touched">
+              <p class="text-danger">Incurrect Account Number</p>
+            </div>
             <div class="mt-5">
-                <input type="text" class="form-control container" [(ngModel)]="psw1" placeholder="password" id="psw" name="password" aria-describedby="emailHelp">
+                <input type="password" class="form-control container" formControlName="psw1" placeholder="password" id="psw" name="password" aria-describedby="emailHelp">
               </div>    
+              <div *ngIf="this.withdrawForm.get('psw')?.errors && this.withdrawForm.get('psw')?.touched">
+                <p class="text-danger">Incurrect Password</p>
+              </div>
               <div class="mt-5">
-                <input type="text" class="form-control container"  [(ngModel)]="amnt1" placeholder="Amount" id="ammount" name="amnt" aria-describedby="emailHelp">
+                <input type="text" class="form-control container"  formControlName="amnt1" placeholder="Amount" id="ammount" name="amnt" aria-describedby="emailHelp">
               </div> 
+              <div *ngIf="this.withdrawForm.get('amnt')?.errors && this.withdrawForm.get('amnt')?.touched">
+                <p class="text-danger">Incurrect Amount</p>
+              </div>
               <button type="submit"  id="depobtn" class="btn btn-success mt-3">Withdraw</button>
               
         

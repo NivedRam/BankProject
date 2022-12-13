@@ -1,22 +1,33 @@
-<div class="content" >
-    <h1>{{aim}}</h1>
+<div class="content">
+  <h1>{{aim}}</h1>
 </div>
 
-<form (ngSubmit)="login()">
+<form (ngSubmit)="login()" [formGroup]="loginForm">
   <div class="login   p-2 container">
-      <h1 class="loginhd ml-5">Login</h1>
-          <div class="mt-5">
-            <input type="text" class="form-control container" [(ngModel)]="acno"  [placeholder]="Data" id="acid" name="acno" aria-describedby="emailHelp">
-          
-          <div class="mt-3">
-            <input type="password" class="form-control container" [(ngModel)]="psw" placeholder="Enter Password" id="pid" name="psw">
-          </div>
-         
-          <button type="submit" (click)="login()" id="loginbtn" class="btn btn-success mt-3">LOGIN</button>
-        
-  
-        <div><a class="registerlink" routerLink="register">Register Here</a></div>
-  
-  </div>
+    <h1 class="loginhd ml-5">Login</h1>
+    <div class="mt-5">
+
+      <div>
+        <input type="text" class="form-control container" formControlName="acno" [placeholder]="Data" id="acid"
+          name="acno" aria-describedby="emailHelp">
+
+      </div>
+      <div *ngIf="this.loginForm.get('acno')?.errors && this.loginForm.get('acno')?.touched">
+        <p class="text-danger">Incurrect Account Number</p>
+      </div>
+      <div class="mt-3">
+        <input type="password" class="form-control container" formControlName="psw" placeholder="Enter Password"
+          id="pid" name="psw">
+      </div>
+      <div *ngIf="this.loginForm.get('psw')?.errors && this.loginForm.get('psw')?.touched">
+        <p class="text-danger">Incurrect Password</p>
+      </div>
+
+      <button type="submit" (click)="login()" id="loginbtn" class="btn btn-success mt-3">LOGIN</button>
+
+
+      <div><a class="registerlink" routerLink="register">Register Here</a></div>
+
+    </div>
   </div>
 </form>
