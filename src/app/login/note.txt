@@ -32,11 +32,75 @@ Router           -class
 
 ApproutingModule  -module
 
+Dependency injection
+--------------------
+-to use a method of class in another class 
+-in contructor
+-steps          access pecifier - public/privet
+                variable
+                class name
+                            privet var:Classname
+
+
+angular Servies
+---------------
+createing service - ng g s (service name)
+
+angular dierectives-To manage DOM in Angilar
+-------------------
+1-strutured dierectives to handles structure datas in view of a component
+    -ngFOr -can dierectly apply in html to acess element from array
+    -ngIf  -contiation check in html
+
+
+2-Component dierectives
+
+3- Atribute dierectives
+    3.1-ngClass
+
+Form validation in angular
+--------------------------
+we can create form in two way   
+    1-template driven form 
+    2-model t\driven form
+
+        -Reactive form
+        ---------------
+        ReactiveFormsModule -module used to create model form 
+
+                            -group,arry,control
+
+
+        -validation model form
+        ----------------------
+        validation - a class in angular it includes method for apply validation
+
+        -access errors in validation rule 
+                   this.regesterForm.get('uname')?.errors
+                                -valid      -emplty response
+                                -invalid    -content
+
+                    if(this.regesterForm.get('uname')?.errors){     //*ngIf
+
+                    }
+
+
+
+local storage in angular
+------------------------
+
+- store   localStorage.setItem()
+- axxess  localStorage.getItem()
+- delete  localStorage.removeitem()
 
 
 
 
 
+Date in angular
+----------------
+Date     -Class
+- create an object of class date to access date and time
 
 
 
@@ -94,3 +158,7 @@ Local storage in angular
  - Access- localstorage.getitem
  - Delte- localstorage.removeitem
  
+
+
+ parent child component Communication in angular 
+ ------------------------------------------------

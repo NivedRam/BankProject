@@ -10,6 +10,7 @@ const routes: Routes = [
   { path:'dashboard', component: DashboardComponent },
   { path:'register', component: RegisterComponent },
   {path:'transaction',component:TransactionComponent}
+  
 ];
 
 

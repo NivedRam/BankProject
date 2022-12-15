@@ -1,7 +1,11 @@
 <h1 class="text-light">Welcome {{user}}</h1>
+<h4 class="text-light">{{dateandtime | date:'short'}}</h4>
 <a class="text-light text-center" routerLink="/transaction">View Transaction History</a>
+<button type="button" class="btn btn-danger" style="margin-left: 1350px;margin-top:-130px; border-radius: 14px;" id="logoutbtn" (click)="deleteconfirm()">Delete</button>
+<app-deleteconfirm [item]="acno"></app-deleteconfirm>
 
-<form (ngSubmit)="deposit()"  [formGroup]="depositForm"  >
+<button type="button" class="btn btn-danger" style="margin-left: 1350px;margin-top:-80px; border-radius: 14px;"(click)="logout()" id="logoutbtn">Logout</button>
+<form [ngClass]="acno?'style':''" (ngSubmit)="deposit()"  [formGroup]="depositForm"  >
     <div class="depoform container bg- mt-5">
         <h1 class="loginhd ml-5">deposit</h1>
         <div class="mt-5">
@@ -23,12 +27,15 @@
             <p class="text-danger">Incurrect Amount</p>
           </div>
           <button type="submit"  id="depobtn" class="btn btn-success mt-3">Deposit</button>
+    </div>
+  
+        </form>
           
     
-    </div>
+ 
 
 
-    <form (ngSubmit)="wihtdraw()" [formGroup]="withdrawForm" >
+    <form [ngClass]="acno?'style':''" (ngSubmit)="wihtdraw()" [formGroup]="withdrawForm" >
         <div class="wi">
             <h1 class="loginhd ml-5">Withdraw</h1>
             <div class="mt-5">
